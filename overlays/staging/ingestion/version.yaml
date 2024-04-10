@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingestion-deployment
+spec:
+  template:
+    spec:
+      containers:
+      - name: ingestion
+        image: nicholasjackson/fake-service:v0.26.1
