@@ -7,9 +7,6 @@ namePrefix: staging-
 resources:
 - ../../../base/reports
 
-#components:
-#  - ../../variants/non-prod
-
 patchesStrategicMerge:
 - version.yaml
 - settings.yaml

@@ -7,9 +7,6 @@ namePrefix: staging-
 resources:
 - ../../../base/ingestion
 
-components:
-  - ../../../components/staging/ingestion
-
 patchesStrategicMerge:
 - version.yaml
 - settings.yaml
