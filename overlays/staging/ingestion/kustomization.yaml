@@ -7,8 +7,8 @@ namePrefix: staging-
 resources:
 - ../../../base/ingestion
 
-#components:
-#  - ../../variants/non-prod
+components:
+  - ../../../components/staging/ingestion
 
 patchesStrategicMerge:
 - version.yaml
