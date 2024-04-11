@@ -5,7 +5,7 @@ namespace: prod
 namePrefix: prod-
 
 resources:
-- ../../../base/reports
+- ../../../base/ingestion
 
 patchesStrategicMerge:
 - version.yaml
