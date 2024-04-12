@@ -1,0 +1,11 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+  source:
+    repoURL: https://github.com/mariog712/saas.git
+    targetRevision: HEAD
+
+applications:
+  - name: ingestion
+  - name: reports
