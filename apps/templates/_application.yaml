@@ -17,6 +17,6 @@ spec:
   source:
     repoURL: {{ $root.Values.spec.source.repoURL }}
     targetRevision: {{ $root.Values.spec.source.targetRevision }}
-    path: manifests/{{  $application.name }}
+    path: manifests/{{  $application.name }}/environments/{{ $root.Values.spec.destination.namespace }}
 {{- end -}}
 {{- end -}}
