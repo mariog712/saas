@@ -18,5 +18,8 @@ spec:
     repoURL: {{ $root.Values.spec.source.repoURL }}
     targetRevision: {{ $root.Values.spec.source.targetRevision }}
     path: manifests/{{ $application.name }}/environments/{{ $root.Values.spec.destination.namespace }}
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
 {{- end -}}
 {{- end -}}
