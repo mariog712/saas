@@ -89,6 +89,49 @@ projects:
    sourceNamespaces:
    - argocd
 
+  guestbook2:
+   namespace: argocd
+   additionalLabels: {}
+   additionalAnnotations: {}
+   permitOnlyProjectScopedClusters: false
+   finalizers:
+   - resources-finalizer.argocd.argoproj.io
+   description: Example Project
+   sourceRepos:
+   - '*'
+   destinations:
+   - namespace: guestbook
+     server: https://kubernetes.default.svc
+   clusterResourceWhitelist: []
+   clusterResourceBlacklist: []
+   namespaceResourceBlacklist:
+   - group: ''
+     kind: ResourceQuota
+   - group: ''
+     kind: LimitRange
+   - group: ''
+     kind: NetworkPolicy
+     orphanedResources: {}
+     roles: []
+   namespaceResourceWhitelist:
+   - group: 'apps'
+     kind: Deployment
+   - group: 'apps'
+     kind: StatefulSet
+   orphanedResources: {}
+   roles: []
+   syncWindows:
+   - kind: allow
+     schedule: '10 1 * * *'
+     duration: 1h
+     applications:
+     - '*-prod'
+     manualSync: true
+   signatureKeys:
+   - keyID: ABCDEF1234567890
+   sourceNamespaces:
+   - argocd
+
 # -- Deploy Argo CD ApplicationSets within this helm release
 # @default -- `{}` (See [values.yaml])
 ## Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/
