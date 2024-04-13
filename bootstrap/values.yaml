@@ -20,6 +20,24 @@ applications:
      syncOptions:
      - CreateNamespace=true
 
+  ingestion:
+   namespace: argocd
+   additionalLabels: {}
+   additionalAnnotations: {}
+   finalizers:
+   - resources-finalizer.argocd.argoproj.io
+   project: avmsaas-staging
+   source:
+     repoURL: https://github.com/mariog712/saas.git
+     targetRevision: HEAD
+     path: manifests/ingestion/environments/staging
+   destination:
+     server: https://kubernetes.default.svc
+     namespace: staging
+   syncPolicy:
+     syncOptions:
+     - CreateNamespace=true
+
 # -- Deploy Argo CD Projects within this helm release
 # @default -- `{}` (See [values.yaml])
 ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
