@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    chart: argo/argocd-apps
+    chart: argocd-apps
     repoURL: https://argoproj.github.io/argo-helm
     targetRevision: 2.0.0
     helm:
@@ -15,3 +15,6 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
