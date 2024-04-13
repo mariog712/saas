@@ -2,7 +2,7 @@
 # @default -- `{}` (See [values.yaml])
 ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
 applications: {}
- reports:
+  reports:
    namespace: argocd
    additionalLabels: {}
    additionalAnnotations: {}
