@@ -14,7 +14,7 @@ spec:
         - $values/values.yaml
   - repoURL: https://github.com/mariog712/saas.git
     targetRevision: HEAD
-    path: bootstrap
+    #path: bootstrap
     ref: values
   destination:
     server: https://kubernetes.default.svc
