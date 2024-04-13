@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-apps
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: argo/argocd-apps
+    repoURL: https://argoproj.github.io/argo-helm
+    targetRevision: 2.0.0
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
