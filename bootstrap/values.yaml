@@ -20,7 +20,7 @@ applications:
      syncOptions:
      - CreateNamespace=true
 
-  ingestion:
+ ingestion:
    namespace: argocd
    additionalLabels: {}
    additionalAnnotations: {}
