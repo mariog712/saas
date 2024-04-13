@@ -68,8 +68,8 @@ projects:
      kind: LimitRange
    - group: ''
      kind: NetworkPolicy
-     orphanedResources: {}
-     roles: []
+     #orphanedResources: {}
+     #roles: []
    namespaceResourceWhitelist:
    - group: 'apps'
      kind: Deployment
@@ -111,8 +111,8 @@ projects:
      kind: LimitRange
    - group: ''
      kind: NetworkPolicy
-     orphanedResources: {}
-     roles: []
+     #orphanedResources: {}
+     #roles: []
    namespaceResourceWhitelist:
    - group: 'apps'
      kind: Deployment
