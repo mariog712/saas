@@ -3,23 +3,23 @@
 ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
 applications: {}
 
-  # reports:
-  #   namespace: argocd
-  #   additionalLabels: {}
-  #   additionalAnnotations: {}
-  #   finalizers:
-  #   - resources-finalizer.argocd.argoproj.io
-  #   project: avmsaas-staging
-  #   source:
-  #     repoURL: https://github.com/mariog712/saas.git
-  #     targetRevision: HEAD
-  #     path: manifests/reports/environments/staging
-  #   destination:
-  #     server: https://kubernetes.default.svc
-  #     namespace: staging
-  #   syncPolicy:
-  #     syncOptions:
-  #     - CreateNamespace=true
+  reports:
+    namespace: argocd
+    additionalLabels: {}
+    additionalAnnotations: {}
+    finalizers:
+    - resources-finalizer.argocd.argoproj.io
+    project: avmsaas-staging
+    source:
+      repoURL: https://github.com/mariog712/saas.git
+      targetRevision: HEAD
+      path: manifests/reports/environments/staging
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: staging
+    syncPolicy:
+      syncOptions:
+      - CreateNamespace=true
 
   # ingestion:
   #   namespace: argocd
