@@ -43,6 +43,7 @@ applications: {}
 # @default -- `{}` (See [values.yaml])
 ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
 projects:
+
   avmsaas-prod:
    namespace: argocd
    additionalLabels: {}
