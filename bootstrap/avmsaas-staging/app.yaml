@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: avmsaas-staging
+  name: avmsaas-staging-cluster
   namespace: argocd
 spec:
   project: default
