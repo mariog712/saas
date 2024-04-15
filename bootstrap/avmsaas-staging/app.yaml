@@ -4,7 +4,7 @@ metadata:
   name: avmsaas-staging
   namespace: argocd
 spec:
-  project: default
+  project: avmsaas-staging
   sources:
   - repoURL: https://argoproj.github.io/argo-helm
     chart: argocd-apps
