@@ -2,7 +2,7 @@
 ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
 applications:
 
-  reports:
+  prod-reports:
     namespace: argocd
     additionalLabels: {}
     additionalAnnotations: {}
