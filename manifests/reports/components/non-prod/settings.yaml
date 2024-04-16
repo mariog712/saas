@@ -8,5 +8,5 @@ spec:
       containers:
       - name: reports
         env:
-        - name: MESSAGE
-          value: Hello from reports service v0.26.1
+        - name: LOG_LEVEL
+          value: debug
