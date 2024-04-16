@@ -1,0 +1,57 @@
+# -- Deploy Argo CD Applications within this helm release
+## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
+applications:
+
+  # reports:
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+  #   finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
+  #   project: avmsaas-staging
+  #   source:
+  #     repoURL: https://github.com/mariog712/saas.git
+  #     targetRevision: HEAD
+  #     path: manifests/reports/environments/staging
+  #   destination:
+  #     server: https://kubernetes.default.svc
+  #     namespace: staging
+  #   syncPolicy:
+  #     syncOptions:
+  #     - CreateNamespace=true
+
+  # ingestion:
+  #   namespace: argocd
+  #   additionalLabels: {}
+  #   additionalAnnotations: {}
+  #   finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
+  #   project: avmsaas-staging
+  #   source:
+  #     repoURL: https://github.com/mariog712/saas.git
+  #     targetRevision: HEAD
+  #     path: manifests/ingestion/environments/staging
+  #   destination:
+  #     server: https://kubernetes.default.svc
+  #     namespace: staging
+  #   syncPolicy:
+  #     syncOptions:
+  #     - CreateNamespace=true
+
+# -- Deploy Argo CD Projects within this helm release
+## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
+projects:
+
+  avmsaas-production:
+   namespace: argocd
+   additionalLabels: {}
+   additionalAnnotations: {}
+   permitOnlyProjectScopedClusters: false
+   finalizers:
+   - resources-finalizer.argocd.argoproj.io
+   description: GKE production cluster
+   sourceRepos:
+   - https://github.com/mariog712/saas.git
+   destinations:
+   - namespace: prod
+     server: https://kubernetes.default.svc

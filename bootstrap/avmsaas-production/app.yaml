@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: avmsaas-production
+  namespace: argocd
+spec:
+  project: default
+  sources:
+  - repoURL: https://argoproj.github.io/argo-helm
+    chart: argocd-apps
+    targetRevision: 2.0.0
+    helm:
+      valueFiles:
+        - $values/bootstrap/avmsaas-production/values.yaml
+  - repoURL: https://github.com/mariog712/saas.git
+    targetRevision: HEAD
+    ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prod
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
