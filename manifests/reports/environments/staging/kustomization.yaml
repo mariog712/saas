@@ -8,7 +8,7 @@ resources:
 - ../../base
 
 components:
-- ../../non-prod
+- ../../components/non-prod
 
 patchesStrategicMerge:
 - version.yaml
