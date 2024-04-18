@@ -83,5 +83,5 @@ tolerations: []
 affinity: {}
 
 env:
-  name: Reports Service
+  name: Reports Servicesss
   message: Hello from reports service
