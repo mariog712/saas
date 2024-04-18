@@ -1,3 +1,2 @@
-env:
-  name: Reports Service
+env:  
   message: Hello from reports service v0.24.2
