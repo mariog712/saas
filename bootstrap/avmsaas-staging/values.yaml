@@ -10,9 +10,17 @@ applications:
     - resources-finalizer.argocd.argoproj.io
     project: avmsaas-staging
     source:
+      #repoURL: https://github.com/mariog712/saas.git
+      #targetRevision: HEAD
+      #path: manifests/reports/environments/staging
       repoURL: https://github.com/mariog712/saas.git
       targetRevision: HEAD
-      path: manifests/reports/environments/staging
+      path: charts/reports
+      helm:
+        valuesFiles:
+        - base/values.yaml
+        - environments/staging/values-version.yaml
+        - environments/staging/values-settings.yaml
     destination:
       server: https://kubernetes.default.svc
       namespace: staging
