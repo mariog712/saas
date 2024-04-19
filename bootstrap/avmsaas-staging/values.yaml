@@ -17,7 +17,7 @@ applications:
       targetRevision: HEAD
       path: charts/reports
       helm:
-        valuesFiles:
+        valueFiles:
         - base/values.yaml
         - environments/staging/values-version.yaml
         - environments/staging/values-settings.yaml
