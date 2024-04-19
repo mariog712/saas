@@ -10,11 +10,9 @@ applications:
     - resources-finalizer.argocd.argoproj.io
     project: avmsaas-staging
     source:
-      #repoURL: https://github.com/mariog712/saas.git
-      #targetRevision: HEAD
-      #path: manifests/reports/environments/staging
       repoURL: https://github.com/mariog712/saas.git
       targetRevision: HEAD
+      #path: manifests/reports/environments/staging
       path: charts/reports
       helm:
         valueFiles:
