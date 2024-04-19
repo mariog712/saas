@@ -2,29 +2,29 @@
 ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/
 applications:
 
-  # staging-reports:
-  #   namespace: argocd
-  #   additionalLabels: {}
-  #   additionalAnnotations: {}
-  #   finalizers:
-  #   - resources-finalizer.argocd.argoproj.io
-  #   project: avmsaas-staging
-  #   source:
-  #     repoURL: https://github.com/mariog712/saas.git
-  #     targetRevision: HEAD
-  #     path: manifests/reports/environments/staging
-  #     # path: charts/reports
-  #     # helm:
-  #     #   valueFiles:
-  #     #   - base/values.yaml
-  #     #   - environments/staging/values-version.yaml
-  #     #   - environments/staging/values-settings.yaml
-  #   destination:
-  #     server: https://kubernetes.default.svc
-  #     namespace: staging
-  #   syncPolicy:
-  #     syncOptions:
-  #     - CreateNamespace=true
+  staging-reports:
+    namespace: argocd
+    additionalLabels: {}
+    additionalAnnotations: {}
+    finalizers:
+    - resources-finalizer.argocd.argoproj.io
+    project: avmsaas-staging
+    source:
+      repoURL: https://github.com/mariog712/saas.git
+      targetRevision: HEAD
+      path: manifests/reports/environments/staging
+      # path: charts/reports
+      # helm:
+      #   valueFiles:
+      #   - base/values.yaml
+      #   - environments/staging/values-version.yaml
+      #   - environments/staging/values-settings.yaml
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: staging
+    syncPolicy:
+      syncOptions:
+      - CreateNamespace=true
 
   # ingestion:
   #   namespace: argocd
