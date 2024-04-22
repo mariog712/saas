@@ -16,11 +16,14 @@ spec:
         - name: reports
           image: nicholasjackson/fake-service:latest
           imagePullPolicy: Always
-          env:
-          - name: NAME
-            value: Reports Service
-          - name: MESSAGE
-            value: Hello from reports service
+          envFrom:
+            - configMapRef:
+                name: environment-vars
+          # env:
+          # - name: NAME
+          #   value: Reports Service
+          # - name: MESSAGE
+          #   value: Hello from reports service
           ports:
           - containerPort: 9090
           resources:

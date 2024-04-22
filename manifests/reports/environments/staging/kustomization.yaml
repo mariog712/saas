@@ -10,6 +10,9 @@ resources:
 components:
 - ../../components/non-prod
 
+patches:
+  - path: configMap.yaml
+
 patchesStrategicMerge:
 - version.yaml
-- settings.yaml
+#- settings.yaml

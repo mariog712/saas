@@ -4,3 +4,9 @@ kind: Kustomization
 resources:
   - service.yaml
   - deployment.yaml
+
+configMapGenerator:
+- name: environment-vars
+  literals:
+    - NAME=Reports Service
+    - MESSAGE=Hello from reports service
