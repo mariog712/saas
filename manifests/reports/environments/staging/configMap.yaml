@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: environment-vars
 data:  
-  MESSAGE: Hello from reports service v0.26.1
+  MESSAGE: Hello from reports service v0.26.1!!!!
