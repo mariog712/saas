@@ -7,6 +7,8 @@ namePrefix: prod-
 resources:
 - ../../base
 
+patches:
+  - path: configMap.yaml
+
 patchesStrategicMerge:
 - version.yaml
-- settings.yaml
