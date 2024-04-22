@@ -15,4 +15,3 @@ patches:
 
 patchesStrategicMerge:
 - version.yaml
-#- settings.yaml
